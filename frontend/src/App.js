@@ -1,61 +1,31 @@
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
+
 import './App.css';
 
-import React, { Component } from 'react';
+import NavBar from "./components/NavBar";
+
+import Home from "./pages/Home";
+import Bio from "./pages/Bio";
+import Resume from "./pages/Resume";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 
 const API_HOST = 'http://localhost:8000';
 
-let _csrfToken = null;
-
-async function getCsrfToken() {
-  if (_csrfToken === null) {
-    const response = await fetch(`${API_HOST}/csrf/`, {
-      credentials: 'include',
-    });
-    const data = await response.json();
-    _csrfToken = data.csrfToken;
-  }
-  return _csrfToken;
-}
-
-async function testRequest(method) {
-  const response = await fetch(`${API_HOST}/ping/`, {
-    method: method,
-    headers: (
-      method === 'POST'
-      ? {'X-CSRFToken': await getCsrfToken()}
-      : {}
-    ),
-    credentials: 'include',
-  });
-  const data = await response.json();
-  return data.result;
-}
-
-class App extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      testGet: 'KO',
-      testPost: 'KO',
-    };
-  }
-
-  async componentDidMount() {
-    this.setState({
-      testGet: await testRequest('GET'),
-      testPost: await testRequest('POST'),
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <p>Test GET request: {this.state.testGet} </p>
-        <p>Test POST request: {this.state.testPost}</p>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/bio" component={Bio} />
+        <Route path="/resume" component={Resume} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/contact" component={Contact} />
+      </Switch>
+    </Router>    
+  );
 }
 
 export default App;

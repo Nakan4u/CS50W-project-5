@@ -10,8 +10,7 @@ import Bio from "./pages/Bio";
 import Resume from "./pages/Resume";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-
-const API_HOST = 'http://localhost:8000';
+import "./Constants";
 
 function App() {
   return (

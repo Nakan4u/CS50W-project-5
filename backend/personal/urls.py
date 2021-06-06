@@ -5,6 +5,5 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('csrf/', views.csrf),
-    path('ping/', views.ping),
+    path('blog/', include('blog_api.urls')),
 ]

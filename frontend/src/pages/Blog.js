@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import '../Constants';
-import { API_HOST } from '../Constants';
 import BlogRoll from '../components/BlogRoll';
+import BlogPost from '../components/BlogPost';
 
 function Blog() {
-  const [posts, setPosts] = useState();
-
-  useEffect(() => {
-    fetch(`${API_HOST}/blog/`)
-      .then((response) => response.json())
-      .then((data) => setPosts(data))
-  }, []);
-
   return(
     <div>
       <h1>Blog</h1>
-      <BlogRoll posts={posts} />
+      <BrowserRouter>
+        <Switch>
+          <Route path='/blog/:slug' component={BlogPost} />  
+          <Route path='/blog' component={BlogRoll} />         
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

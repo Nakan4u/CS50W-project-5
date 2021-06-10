@@ -1,14 +1,28 @@
-import React from 'react';
-import BlogDetail from "./BlogDetail";
+import React, {useEffect, useState} from 'react';
 
-function BlogRoll(props) {
+import { API_HOST } from '../Constants';
 
-  let postList = props.posts ?
-  props.posts.map((post, index)=>{
-    return <BlogDetail key={index} post={post}/>
+import BlogPostDetail from "./BlogPostDetail";
+
+function BlogRoll() {
+  const [posts, setPosts] = useState();
+
+  useEffect(() => {
+    fetch(`${API_HOST}/blog/`)
+      .then((response) => response.json())
+      .then((data) => setPosts(data))
+  }, []);
+
+  let postList = posts ?
+  posts.map((post, index)=>{
+    return <BlogPostDetail key={index} post={post}/>
   }) : '...';
-
-  return <div>{postList}</div>
+ 
+  return (
+    <div>
+      {postList}
+    </div>
+    );
 }
 
 export default BlogRoll;

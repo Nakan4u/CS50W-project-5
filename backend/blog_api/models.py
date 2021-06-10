@@ -25,4 +25,4 @@ class BlogPost(models.Model):
     ordering = ('-published',)
 
   def __str__(self):
-    return self.title
+    return self.slug

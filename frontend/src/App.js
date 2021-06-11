@@ -14,16 +14,19 @@ import "./Constants";
 
 function App() {
   return (
+    <>
+    
     <Router>
       <NavBar />
       <Switch>
         <Route path="/" component={Home} exact/>
         <Route path="/bio" component={Bio} />
         <Route path="/resume" component={Resume} />
-        <Route path="/blog" component={Blog} exact/>
+        <Route path="/blog" component={Blog} />
         <Route path="/contact" component={Contact} />
       </Switch>
-    </Router>    
+    </Router> 
+    </>  
   );
 }
 

@@ -19,9 +19,9 @@ function BlogRoll() {
   }) : '...';
  
   return (
-    <div>
+    <ul style={{listStyle: "none"}}>
       {postList}
-    </div>
+    </ul>
     );
 }
 

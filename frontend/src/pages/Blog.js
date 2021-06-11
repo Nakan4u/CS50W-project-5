@@ -1,19 +1,19 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import '../Constants';
 import BlogRoll from '../components/BlogRoll';
 import BlogPost from '../components/BlogPost';
 
 function Blog() {
+  let { path } = useRouteMatch();
+
   return(
     <div>
       <h1>Blog</h1>
-      <BrowserRouter>
         <Switch>
-          <Route path='/blog/:slug' component={BlogPost} />  
-          <Route path='/blog' component={BlogRoll} />         
+          <Route exact path={path} component={BlogRoll} />  
+          <Route path={`${path}/:slug`} component={BlogPost} />       
         </Switch>
-      </BrowserRouter>
     </div>
   );
 }

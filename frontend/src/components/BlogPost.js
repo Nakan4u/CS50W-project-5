@@ -8,7 +8,7 @@ function BlogPost() {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_HOST}/blog/${slug}`)
+    fetch(`${API_HOST}/blog/post/${slug}`)
       .then((response) => response.json())
       .then((data) => setPost(data))
   }, []);

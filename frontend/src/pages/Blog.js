@@ -12,7 +12,7 @@ function Blog() {
       <h1>Blog</h1>
         <Switch>
           <Route exact path={path} component={BlogRoll} />  
-          <Route path={`${path}/:slug`} component={BlogPost} />       
+          <Route path={`${path}/post/:slug`} component={BlogPost} />       
         </Switch>
     </div>
   );

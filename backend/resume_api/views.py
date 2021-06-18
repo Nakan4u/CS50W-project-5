@@ -6,6 +6,6 @@ from .serializers import ResumeSerializer, WorkItemSerializer, EducationItemSeri
 
 @api_view(['GET'])
 def GetResume(request):
-  resume = Resume.objects.all()
-  serializer = ResumeSerializer(resume, many=True)
+  resume = Resume.objects.first()
+  serializer = ResumeSerializer(resume, many=False)
   return Response(serializer.data)

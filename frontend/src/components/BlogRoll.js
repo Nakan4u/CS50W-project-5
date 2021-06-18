@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-
 import { API_HOST } from '../Constants';
 
 import BlogPostDetail from "./BlogPostDetail";

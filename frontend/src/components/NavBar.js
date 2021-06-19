@@ -1,14 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import NavBarStyles from './styles/NavBarStyles'
 function NavBar() {
+  // TODO: move this into its own file
+  const routes = {
+    Home: "/",
+    Bio: "/bio",
+    Blog: "/blog",
+    Resume: "/resume",
+    Contact: "/contact",
+  }
+
   return (
     <nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/bio">Bio</NavLink>
-      <NavLink to="/blog">Blog</NavLink>
-      <NavLink to="/resume">Resume</NavLink>
-      <NavLink to="/contact">Contact</NavLink>
+      {Object.keys(routes).map((key, i) => (
+        <NavLink key={i} to={routes[key]} style={NavBarStyles.NavLink}>{key}</NavLink>
+      ))}
     </nav>
   );
 }

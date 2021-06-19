@@ -1,6 +1,7 @@
+import React, {useEffect, useState} from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
-
-import '../Constants';
+import { API_HOST } from '../Constants';
+import Card from '../components/Card';
 import BlogRoll from '../components/BlogRoll';
 import BlogPost from '../components/BlogPost';
 
@@ -11,7 +12,9 @@ function Blog() {
     <div>
       <h1>Blog</h1>
         <Switch>
-          <Route exact path={path} component={BlogRoll} />  
+          <Route exact path={path}>
+            <BlogRoll />
+          </Route>
           <Route path={`${path}/post/:slug`} component={BlogPost} />       
         </Switch>
     </div>

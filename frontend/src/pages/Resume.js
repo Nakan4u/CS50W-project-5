@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { API_HOST } from '../Constants';
+import Card from '../components/Card';
 
 function Resume() {
   const [resume, setResume] = useState({});
@@ -10,25 +11,27 @@ function Resume() {
     .then(data => setResume(data))
   }, []);
 
-
   let work = resume.work ?
-  resume.work.map((workItem, index) => {
-    return(
-      <li key={index}>
-        <h3>{workItem.company}</h3>
-        <a href={workItem.website}>{workItem.website}</a>
-        <h4>{workItem.startDate} - {workItem.endDate}</h4>
-        <p>{workItem.summary}</p>
-      </li>
+  resume.work.map((item, index) => {
+    return (
+      <Card key={index}
+        title={item.company}
+        link={item.website}
+        subtitle={item.position}
+        time={`${item.startDate} - ${item.endDate}`}
+        content={item.summary}
+      />
   )}) : '';
 
+
   let education = resume.education ?
-  resume.education.map((eduItem, index) => {
+  resume.education.map((item, index) => {
     return(
-      <li key={index}>
-        <h3>{eduItem.institution}</h3>
-        <p>{eduItem.level} {eduItem.degreeTitle} {eduItem.startDate} - {eduItem.endDate} </p>
-      </li>
+      <Card key={index}
+        title={item.institution}
+        subtitle={`${item.level} ${item.degreeTitle}`}
+        time={`${item.startDate} - ${item.endDate}`}
+      />
   )}) : '';
 
   return(

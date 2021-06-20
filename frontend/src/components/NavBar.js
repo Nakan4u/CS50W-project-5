@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import NavBarStyles from './styles/NavBarStyles'
+import './styles/NavBarStyles.css'
+
 function NavBar() {
   // TODO: move this into its own file
   const routes = {
@@ -14,7 +15,7 @@ function NavBar() {
   return (
     <nav>
       {Object.keys(routes).map((key, i) => (
-        <NavLink key={i} to={routes[key]} style={NavBarStyles.NavLink}>{key}</NavLink>
+        <NavLink key={i} to={routes[key]} >{key}</NavLink>
       ))}
     </nav>
   );

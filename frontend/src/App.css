@@ -1,0 +1,20 @@
+:root {
+  --primary-color: #153ca1;
+  --secondary-color: #eee8e2;
+  --white: #fcfcfc;
+  --black: #191919;
+  --link-color: #a07150;
+}
+
+body {
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color)
+}
+
+a:visited {
+  color: var(--link-color)
+}

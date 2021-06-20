@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { API_HOST } from '../Constants';
 import Card from '../components/Card';
-
+import './styles/Page.css'
 function Resume() {
   const [resume, setResume] = useState({});
 
@@ -13,14 +13,16 @@ function Resume() {
 
   let work = resume.work ?
   resume.work.map((item, index) => {
+    const props = {
+      "key" : index,
+      "title" : item.company,
+      "subtitle" : item.position,
+      "link" : item.website,
+      "time" : `${item.startDate} - ${item.endDate}`,
+      "content" : item.summary,
+    }
     return (
-      <Card key={index}
-        title={item.company}
-        link={item.website}
-        subtitle={item.position}
-        time={`${item.startDate} - ${item.endDate}`}
-        content={item.summary}
-      />
+      <Card {...props}/>
   )}) : '';
 
 
@@ -35,16 +37,17 @@ function Resume() {
   )}) : '';
 
   return(
-    <div>
+    <main>
       <h1>{resume.firstName} {resume.lastName}</h1>
       <h2>{resume.label}</h2>
       <p>{resume.summary}</p>
-      <h2>Work</h2>
-      <ul>{work}</ul>
 
-      <h2>Education</h2>
-      <ul>{education}</ul>
-    </div>
+      { work ? <h2>Work</h2> : ""}
+      <ul style={{"padding":"0px"}}>{work}</ul>
+
+      { education ? <h2>Education</h2> : ""}
+      <ul style={{"padding":"0px"}}>{education}</ul>
+    </main>
   );
 }
 

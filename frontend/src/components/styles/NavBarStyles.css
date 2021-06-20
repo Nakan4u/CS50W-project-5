@@ -1,0 +1,12 @@
+nav {
+  display: block;
+  background-color: var(--primary-color);
+  margin: 0px;
+  padding: 25px;
+}
+
+nav a {
+  font-size: large;
+  font-weight: bold;
+  padding-right: 20px;
+}

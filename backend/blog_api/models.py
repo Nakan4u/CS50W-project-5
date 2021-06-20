@@ -19,7 +19,7 @@ class BlogPost(models.Model):
   excerpt = models.TextField(null=True)
   content = models.TextField()
   slug = models.SlugField(max_length=256, unique_for_date='published')
-  published = models.DateTimeField(default=timezone.now)
+  published = models.DateField()
   status = models.CharField(max_length=10, choices=options, default='published')
 
   class Meta:

@@ -1,12 +1,57 @@
 nav {
-  display: block;
   background-color: var(--primary-color);
+  display: flex;
   margin: 0px;
-  padding: 25px;
+  height: 2em;
+  padding: 1em;
+  width: 100%;
 }
 
-nav a {
-  font-size: large;
+
+a {
+  font-size: larger;
   font-weight: bold;
   padding-right: 20px;
+}
+
+.navLeftSide {
+  align-items: center;
+  display: flex;
+  flex: 50%;
+  justify-content: left;
+}
+
+.navRightSide {
+  align-items: center;
+  display: flex;
+  flex: 50%;
+  justify-content: flex-end;
+  padding-right: 2em;
+}
+
+.navRightSide button {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .navRightSide button {
+    display: flex;
+  }
+
+  .navRightSide .linkList {
+    display: none;
+  }
+
+  .navRightSide #navPopupMenu {
+    align-items: center;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    left: 0px;
+    padding: 1em;
+    position: absolute;
+    top: 4em;
+    width: 100%;
+  }
 }

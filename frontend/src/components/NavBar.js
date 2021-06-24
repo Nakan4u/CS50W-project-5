@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import './styles/NavBarStyles.css'
 
 function NavBar() {
-  // TODO: move this into its own file
+  const [expandLinks, setExpandLinks] = useState(false);
+
+  // Perhaps this array could be moved to its own file and passed as props?
   const routes = {
-    Home: "/",
     Bio: "/bio",
     Blog: "/blog",
     Resume: "/resume",
@@ -14,11 +15,21 @@ function NavBar() {
 
   return (
     <nav>
-      {Object.keys(routes).map((key, i) => (
-        <NavLink key={i} to={routes[key]} >{key}</NavLink>
-      ))}
+      <div className="navLeftSide">
+        <NavLink to={"/"}>Calum Bell</NavLink>
+      </div>
+      <div className="navRightSide">
+        <div className="linkList" id={expandLinks ? "navPopupMenu" : ""}>
+          {Object.keys(routes).map((key, i) => (
+            <NavLink key={i} to={routes[key]}
+              onClick={() => setExpandLinks(false)}
+            > {key} </NavLink>
+          ))}
+        </div>
+        <button onClick={() => setExpandLinks(!expandLinks)}>Navigation</button>
+      </div>
     </nav>
   );
 }
 
-export default NavBar;
+export default NavBar; 

@@ -1,13 +1,21 @@
 :root {
-  --primary-color: #153ca1;
+  --primary-color: #2f14c9;
   --secondary-color: #eee8e2;
+  --highlight-primary: #c00303;
+  --highlight-secondary: #ffe600;
   --white: #fcfcfc;
   --black: #191919;
   --link-color: #a07150;
 }
 
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
 body {
-  background-color: var(--white);
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -17,4 +25,22 @@ a {
 
 a:visited {
   color: var(--link-color)
+}
+
+button {
+  background-color: var(--highlight-primary);
+  border: none;
+  color: var(--white);
+  margin: .25em;
+  padding: .5em 1.5em;
+  font-weight: bold;
+}
+
+button .selected {
+  background-color: var(--highlight-secondary);
+}
+
+h1 {
+  font-size: 3.5em;
+  margin: .25em 0em;
 }

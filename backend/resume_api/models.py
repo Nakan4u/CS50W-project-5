@@ -39,3 +39,17 @@ class EducationItem(models.Model):
     
   def __str__(self):
     return self.institution
+
+class ResumeItem(models.Model):
+  user = models.ForeignKey(Resume, on_delete=models.CASCADE)
+  title = models.CharField(max_length=64)
+  subtitle = models.CharField(max_length=64)
+  startDate = models.DateField()
+  endDate = models.DateField()
+  website = models.CharField(max_length=128)
+
+  class Meta:
+    ordering = ('-startDate',)
+
+  def __str__(self):
+    return self.title

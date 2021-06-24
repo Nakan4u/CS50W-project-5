@@ -7,7 +7,7 @@ import BlogPost from '../components/BlogPost';
 
 function Blog() {
   let { path } = useRouteMatch();
-  
+
   const [posts, setPosts] = useState();
   const [category, setCategory] = useState(null);
   const [categories, setCategories] = useState([]);
@@ -47,7 +47,7 @@ function Blog() {
                 "title": post.title,
                 "subtitle": post.category,
                 "time": post.published,
-                "link": `/blog/post/${post.slug}`,
+                "titleLink": `/blog/post/${post.slug}`,
                 "content": post.excerpt,
               }
               return(

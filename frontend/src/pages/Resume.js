@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { API_HOST } from '../Constants';
 import Card from '../components/Card';
-import './styles/Page.css'
+import './styles/Page.css';
+import './styles/Resume.css';
+
 function Resume() {
   const [resume, setResume] = useState({});
 
@@ -41,12 +43,17 @@ function Resume() {
       <h1>{resume.firstName} {resume.lastName}</h1>
       <h2>{resume.label}</h2>
       <p>{resume.summary}</p>
-
-      { work ? <h2>Work</h2> : ""}
-      <ul style={{"padding":"0px"}}>{work}</ul>
-
-      { education ? <h2>Education</h2> : ""}
-      <ul style={{"padding":"0px"}}>{education}</ul>
+      <div className="grid-wrapper">
+        <section>
+          { work ? <h2>Work</h2> : "" }
+          <ul style={{"padding":"0px"}}>{ work }</ul>
+        </section>
+        
+        <section>
+          { education ? <h2>Education</h2> : "" }
+          <ul style={{"padding":"0px"}}>{education}</ul>
+        </section>
+      </div>
     </main>
   );
 }

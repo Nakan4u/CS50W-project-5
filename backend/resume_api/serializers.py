@@ -1,34 +1,39 @@
 from rest_framework import serializers
-from .models import Resume, WorkItem, EducationItem
+from .models import Resume, ResumeItem, WorkItem, EducationItem, CPDItem
 
-class WorkItemSerializer(serializers.ModelSerializer):
+resumeItemFields = ["title", "subtitle", "startDate", "endDate", "summary", "bulletPoints", "website"]
+
+class ResumeItemSerializer(serializers.ModelSerializer):
   class Meta:
-    model = WorkItem
-    fields = ('company', 'position', 'startDate', 'endDate', 'website', 'summary')
-  
-  # overwriting method to format dates
+    model = ResumeItem
+    fields = resumeItemFields
+
   def to_representation(self, instance):
-    representation =  super(WorkItemSerializer, self).to_representation(instance)
+    representation =  super(ResumeItemSerializer, self).to_representation(instance)
     representation['startDate'] = instance.startDate.strftime("%b %Y")
     representation['endDate'] = instance.endDate.strftime("%b %Y") if representation['endDate'] else "Present"
     return representation
 
-class EducationItemSerializer(serializers.ModelSerializer):
+class WorkItemSerializer(ResumeItemSerializer):
+  class Meta:
+    model = WorkItem
+    fields = resumeItemFields
+
+class EducationItemSerializer(ResumeItemSerializer):
   class Meta:
     model = EducationItem
-    fields = ('institution', 'level', 'degreeTitle', 'startDate', 'endDate')
+    fields = resumeItemFields
 
-  # overwriting method to format dates
-  def to_representation(self, instance):
-    representation =  super(EducationItemSerializer, self).to_representation(instance)
-    representation['startDate'] = instance.startDate.strftime("%Y")
-    representation['endDate'] = instance.endDate.strftime("%Y")
-    return representation
-  
+class CPDItemSerializer(ResumeItemSerializer):
+  class Meta:
+    model = CPDItem
+    fields = resumeItemFields
+
 class ResumeSerializer(serializers.ModelSerializer):
-  education = EducationItemSerializer(many=True)
   work = WorkItemSerializer(many=True)
+  education = EducationItemSerializer(many=True)
+  cpd = CPDItemSerializer(many=True)
 
   class Meta:
     model = Resume
-    fields = ('firstName', 'lastName', 'label', 'summary', 'education', 'work')
+    fields = ('firstName', 'lastName', 'label', 'summary', 'work', 'education', 'cpd')

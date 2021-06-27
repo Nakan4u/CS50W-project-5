@@ -6,6 +6,10 @@ li {
   color: var(--font-secondary);
 }
 
+
+h3 button {
+  float: right;
+}
 li .subtitle {
   font-weight: bold;
 }
@@ -13,4 +17,11 @@ li .subtitle {
 li .timestamp {
   margin: 0px;
   font-weight: lighter;
+  text-align: right;
+}
+
+.bulletpoint-list li {
+  padding: 0em;
+  margin: 0.2em 0em;
+  list-style-type: disc;
 }

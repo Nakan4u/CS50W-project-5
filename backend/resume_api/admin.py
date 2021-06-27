@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(Resume)
 admin.site.register(WorkItem)
 admin.site.register(EducationItem)
+admin.site.register(CPDItem)

@@ -32,10 +32,10 @@ function Blog() {
       <h1>Blog</h1>
         <Switch>
           <Route exact path={path}>
-            <button onClick={() => setCategory(null)}>All</button>
+            <button className={!category && "button-selected"}onClick={() => setCategory(null)}>All</button>
             {categories ? categories.map((c, index) => {
               return(
-                <button key={index} onClick={ () => setCategory(c.name) }>
+                <button className={category === c.name && "button-selected"} key={index} onClick={ () => setCategory(c.name) }>
                   {c.name}
                 </button>
               )

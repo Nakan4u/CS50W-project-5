@@ -13,49 +13,46 @@ function Resume() {
     .then(data => setResume(data))
   }, []);
 
-  let work = resume.work ?
-  resume.work.map((item, index) => {
-    const props = {
-      "key" : index,
-      "title" : item.company,
-      "subtitle" : item.position,
-      "link" : item.website,
-      "time" : `${item.startDate} - ${item.endDate}`,
-      "content" : item.summary,
-    }
-    return (
-      <Card {...props}/>
-  )}) : '';
-
-
-  let education = resume.education ?
-  resume.education.map((item, index) => {
-    return(
-      <Card key={index}
-        title={item.institution}
-        subtitle={`${item.level} ${item.degreeTitle}`}
-        time={`${item.startDate} - ${item.endDate}`}
-      />
-  )}) : '';
-
   return(
     <main>
       <h1>{resume.firstName} {resume.lastName}</h1>
       <h2>{resume.label}</h2>
       <p>{resume.summary}</p>
       <div className="grid-wrapper">
-        <section>
-          { work ? <h2>Work</h2> : "" }
-          <ul style={{"padding":"0px"}}>{ work }</ul>
-        </section>
+        {resume.work && resume.work.length > 0 &&
+          generateSection(resume.work, "Work")
+        }
         
-        <section>
-          { education ? <h2>Education</h2> : "" }
-          <ul style={{"padding":"0px"}}>{education}</ul>
-        </section>
+        { resume.education && resume.education.length > 0 &&
+          generateSection(resume.education, "Education")
+        }
+
+        { resume.cpd && resume.cpd.length > 0 &&
+          generateSection(resume.cpd, "Professional Development")
+        }
       </div>
     </main>
   );
 }
-
 export default Resume;
+
+function generateSection(json, title) {
+  return(
+    <section>
+      <h2>{title}</h2>
+      {json.map((item, index) => {
+        return (
+          <Card key={index}
+            isAccordion={true}
+            title={item.title}
+            subtitle={item.subtitle}
+            time={`${item.startDate} - ${item.endDate}`}
+            content={item.summary}
+            points={item.bulletPoints}
+            link={item.website}
+          />
+        )
+      })}
+    </section>
+  )
+}

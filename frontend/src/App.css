@@ -1,5 +1,6 @@
 :root {
   --primary-color: #2f14c9;
+  --primary-color-light: #452dcc;
   --secondary-color: #eee8e2;
   --highlight-primary: #c00303;
   --highlight-secondary: #ffe600;
@@ -18,13 +19,22 @@ body {
   padding: 0;
 }
 
+main {
+  margin-top: 40px;
+}
+
 a {
   text-decoration: none;
-  color: var(--link-color)
+  color: var(--link-color);
+  transition: background-color 0.25s;
 }
 
 a:visited {
   color: var(--link-color)
+}
+
+a:hover {
+  background-color: var(--secondary-color);
 }
 
 button {
@@ -34,11 +44,13 @@ button {
   margin: .25em;
   padding: .5em 1.5em;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-button .selected {
-  background-color: var(--highlight-secondary);
+.button-selected {
+  background-color: var(--primary-color);
 }
+
 
 h1 {
   font-size: 3.5em;

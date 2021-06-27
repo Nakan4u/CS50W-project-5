@@ -4,6 +4,8 @@ nav {
   margin: 0px;
   height: 2em;
   padding: 1em;
+  position: fixed;
+  top: 0;
   width: 100%;
 }
 
@@ -11,20 +13,24 @@ nav {
 a {
   font-size: larger;
   font-weight: bold;
-  padding-right: 20px;
+  padding: 1em;
+}
+
+.active {
+  background-color: var(--primary-color-light);
 }
 
 .navLeftSide {
   align-items: center;
   display: flex;
-  flex: 50%;
+  flex: 30%;
   justify-content: left;
 }
 
 .navRightSide {
   align-items: center;
   display: flex;
-  flex: 50%;
+  flex: 70%;
   justify-content: flex-end;
   padding-right: 2em;
 }
@@ -53,5 +59,9 @@ a {
     position: absolute;
     top: 4em;
     width: 100%;
+  }
+
+  #navPopupMenu a {
+    background-color: var(--secondary-color);
   }
 }

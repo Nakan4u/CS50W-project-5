@@ -1,0 +1,26 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  grid-column-gap: 1em;
+}
+
+.icon-list {
+  padding-left: 0em;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon-list li img {
+  width: 64px;
+}
+
+@media only screen and (max-width: 768px) {
+  main{
+    align-items: center;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}

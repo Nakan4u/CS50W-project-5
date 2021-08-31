@@ -1,19 +1,23 @@
-nav {
+.nav {
   background-color: var(--primary-color);
   display: flex;
-  margin: 0px;
   height: 2em;
-  padding: 1em;
+  padding: 1em 2em 1em 2em;
   position: fixed;
   top: 0;
   width: 100%;
 }
 
 
-a {
+.nav a {
   font-size: larger;
   font-weight: bold;
+  transition: background-color 0.25s;
   padding: 1em;
+}
+
+.nav a:hover {
+  background-color: var(--secondary-color);
 }
 
 .active {
@@ -23,16 +27,16 @@ a {
 .navLeftSide {
   align-items: center;
   display: flex;
-  flex: 30%;
+  flex: 35%;
   justify-content: left;
 }
 
 .navRightSide {
   align-items: center;
   display: flex;
-  flex: 70%;
+  flex: 65%;
   justify-content: flex-end;
-  padding-right: 2em;
+  padding-right: 4em;
 }
 
 .navRightSide button {

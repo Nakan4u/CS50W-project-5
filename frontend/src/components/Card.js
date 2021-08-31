@@ -7,25 +7,28 @@ function Card(props) {
   
 
   return (
-    <li>
-      <h3>
-        {props.titleLink
-          ? <a href={props.titleLink}>{props.title}</a>
-          : <>{props.title}</>
-        }
-        
-        {props.isAccordion && 
-          <span>
+    <li className="card">
+      <div className="card-grid-container">
+        <div className="card-grid-column">
+          <p className="card-header">
+            {props.titleLink
+              ? <a href={props.titleLink}>{props.title}</a>
+              : <>{props.title}</>
+            }
+            <div className="subtitle">{props.subtitle}</div>
+            
+          </p>
+          <span className="timestamp">{props.time}</span>
+        </div>
+        {props.isAccordion &&
+          <div className="card-grid-column"> 
             <button className={isExpanded && "button-selected"}
               onClick={() => setIsExpanded(!isExpanded)}>
                 Expand
               </button>
-          </span>
+          </div>
         }
-      </h3>
-      
-      <p className="subtitle">{props.subtitle}</p>
-      <span className="timestamp">{props.time}</span>
+      </div>
       {isExpanded &&
         <div>
           <p>{props.content}</p>

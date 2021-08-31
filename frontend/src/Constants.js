@@ -1,1 +1,2 @@
 export const API_HOST = 'http://localhost:8000';
+export const PORTRAIT_URL = 'https://doc-04-08-docs.googleusercontent.com/docs/securesc/89hjo5c2blekn94rskmrf5hq2vcf0pmk/j5k6nc3mnk40gjkj7s34294e0qbt4si1/1624804425000/04526027297062169943/04526027297062169943/103XHEvx6FTDZFHFgZ3WcOnG40CtTqcVo?e=view&authuser=0&nonce=ij5s26b8dpsnc&user=04526027297062169943&hash=a74mp3dshrrvjq02u19cc9uu52n64hoo';

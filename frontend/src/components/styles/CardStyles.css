@@ -1,20 +1,23 @@
-li {
+.card {
   list-style: none;
-  margin: .25em .25em;
-  padding: 1em;
-  background-color: var(--secondary-color);
+  margin: .25em .0em;
+  padding: .75em .0em;
   color: var(--font-secondary);
+
 }
 
-
-h3 button {
-  float: right;
-}
-li .subtitle {
+.card-header {
   font-weight: bold;
 }
 
-li .timestamp {
+.card-header button {
+  float: right;
+}
+.card .subtitle {
+  font-weight: bold;
+}
+
+.card .timestamp {
   margin: 0px;
   font-weight: lighter;
   text-align: right;
@@ -24,4 +27,16 @@ li .timestamp {
   padding: 0em;
   margin: 0.2em 0em;
   list-style-type: disc;
+}
+
+.card-grid-container {
+  align-items: top;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: top;
+}
+
+.card-grid-column button {
+  float: right;
+  margin: 2em;
 }

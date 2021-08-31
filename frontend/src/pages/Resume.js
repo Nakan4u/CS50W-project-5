@@ -15,8 +15,9 @@ function Resume() {
 
   return(
     <main>
-      <h1>{resume.firstName} {resume.lastName}</h1>
-      <h2>{resume.label}</h2>
+      <h1>
+        {resume.firstName} {resume.lastName}
+      </h1>
       <p>{resume.summary}</p>
       <div className="grid-wrapper">
         {resume.work && resume.work.length > 0 &&
@@ -28,7 +29,7 @@ function Resume() {
         }
 
         { resume.cpd && resume.cpd.length > 0 &&
-          generateSection(resume.cpd, "Professional Development")
+          generateSection(resume.cpd, "CPD")
         }
       </div>
     </main>

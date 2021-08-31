@@ -4,7 +4,6 @@ import './styles/NavBarStyles.css'
 
 function NavBar() {
   const [expandLinks, setExpandLinks] = useState(false);
-  const [activeRoute, setActiveRoute] = useState('/');
 
   // Perhaps this array could be moved to its own file and passed as props?
   const routes = {
@@ -14,7 +13,7 @@ function NavBar() {
   }
 
   return (
-    <nav>
+    <nav className="nav">
       <div className="navLeftSide">
         <NavLink exact={true} to={"/"}>Calum Bell</NavLink>
       </div>
@@ -24,7 +23,7 @@ function NavBar() {
             <NavLink 
               key={i} 
               to={routes[key]}
-              onClick={() => { setExpandLinks(false); setActiveRoute(routes[key]); }}
+              onClick={() =>  setExpandLinks(false)}
             > {key} </NavLink>
           ))}
         </div>

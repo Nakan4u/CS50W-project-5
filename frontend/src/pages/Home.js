@@ -16,16 +16,18 @@ function Home() {
           <p className="large-text">I am a developer, audio engineer, and STEM educator from London.</p>
           <ul className="icon-list">
             <li>
-              <a href="https://github.com/calumbell"><img src={github_icon}></img></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/calum-bell/">
-                <img src={linkedin_icon}></img>
+              <a href="https://github.com/calumbell" target="_blank" rel="noreferrer">
+                <img src={github_icon} alt="link to my GitHub profile"></img>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/caaaaalum">
-                <img src={twitter_icon}></img>
+              <a href="https://www.linkedin.com/in/calum-bell/" target="_blank" rel="noreferrer"> 
+                <img src={linkedin_icon} alt="link to my LinkedIn profile"></img>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/caaaaalum" target="_blank" rel="noreferrer">
+                <img src={twitter_icon} alt="link to my Twitter profile"></img>
               </a>
             </li>
           </ul>
@@ -34,7 +36,7 @@ function Home() {
 
 
         <div className="grid-item">
-          <img src={portrait}></img>
+          <img src={portrait} alt="a portrait of Calum"></img>
         </div>
         
       </div>

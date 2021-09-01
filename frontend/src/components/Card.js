@@ -22,7 +22,7 @@ function Card(props) {
         </div>
         {props.isAccordion &&
           <div className="card-grid-column"> 
-            <button className={isExpanded && "button-selected"}
+            <button className={isExpanded ? "button-selected" : undefined}
               onClick={() => setIsExpanded(!isExpanded)}>
                 Expand
               </button>

@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { API_HOST } from '../Constants';
-import Card from '../components/Card';
+import ContentSection from '../components/ContentSection';
 import './styles/Page.css';
 import './styles/Resume.css';
+
+const headings = ['work', 'education', 'cpd'];
 
 function Resume() {
   const [resume, setResume] = useState({});
@@ -11,6 +13,7 @@ function Resume() {
     fetch(`${API_HOST}/resume`)
     .then(res => res.json())
     .then(data => setResume(data))
+    .then(console.log(resume))
   }, []);
 
   return(
@@ -19,41 +22,17 @@ function Resume() {
         {resume.firstName} {resume.lastName}
       </h1>
       <p>{resume.summary}</p>
-      <div className="grid-wrapper">
-        {resume.work && resume.work.length > 0 &&
-          generateSection(resume.work, "Work")
-        }
-        
-        { resume.education && resume.education.length > 0 &&
-          generateSection(resume.education, "Education")
-        }
-
-        { resume.cpd && resume.cpd.length > 0 &&
-          generateSection(resume.cpd, "CPD")
+      <div>
+        { // for each heading present in JSON rspns, generate a content section
+          headings.map((heading, index) => {
+            return(
+              resume[heading] && resume[heading].length > 0 &&
+                <ContentSection key={index} title={heading} items={resume[heading]}/>
+            )
+          })
         }
       </div>
     </main>
   );
 }
 export default Resume;
-
-function generateSection(json, title) {
-  return(
-    <section>
-      <h2>{title}</h2>
-      {json.map((item, index) => {
-        return (
-          <Card key={index}
-            isAccordion={true}
-            title={item.title}
-            subtitle={item.subtitle}
-            time={`${item.startDate} - ${item.endDate}`}
-            content={item.summary}
-            points={item.bulletPoints}
-            link={item.website}
-          />
-        )
-      })}
-    </section>
-  )
-}

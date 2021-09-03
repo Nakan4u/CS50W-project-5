@@ -1,0 +1,25 @@
+.icon-list-component {
+  padding: 0em;
+  margin: 0em 0em;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border-top: 8px solid var(--primary-color);
+}
+
+.icon-list-component li {
+  display: flex;
+}
+
+.icon-list-component li img {
+  width: 52px;
+  padding: 0.5em 0em;
+  
+}
+
+.icon-list-component span {
+  align-content: center;
+  margin: 0em 0.5em;
+}

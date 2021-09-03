@@ -5,32 +5,6 @@
   grid-column-gap: 1em;
 }
 
-.icon-list {
-  padding: 0em;
-  margin: 0em 0em;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-  border-top: 8px solid var(--primary-color);
-}
-
-.icon-list li {
-  display: flex;
-}
-
-.icon-list li img {
-  width: 52px;
-  padding: 0.5em 0em;
-  
-}
-
-.icon-list span {
-  align-content: center;
-  margin: 0em 0.5em;
-}
-
 
 @media only screen and (max-width: 768px) {
   main{

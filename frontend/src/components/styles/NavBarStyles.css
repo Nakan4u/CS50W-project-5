@@ -1,8 +1,12 @@
+
+
 .nav {
+  align-content: center;
   background-color: var(--primary-color);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 1fr;
   height: 2em;
-  padding: 1em 0em 1em 0em;
+  padding: 1em 0em;
   position: fixed;
   top: 0;
   width: 100%;
@@ -14,7 +18,7 @@
   font-size: larger;
   font-weight: bold;
   transition: background-color 0.25s;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .nav a:hover {
@@ -28,9 +32,8 @@
 .navLeftSide {
   align-items: center;
   display: flex;
-  flex: 45%;
+  flex: 35%;
   justify-content: left;
-  margin-left: 4em;
 }
 
 .navRightSide {
@@ -38,17 +41,14 @@
   display: flex;
   flex: 65%;
   justify-content: flex-end;
-  padding-right: 4em;
 }
 
 .navRightSide button {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .navRightSide {
-    padding-right: 2em;
-  }
+
+@media only screen and (max-width: 675px) {
   .navRightSide button {
     display: flex;
   }

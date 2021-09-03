@@ -1,9 +1,64 @@
+/* Responsive text resizing */
+
+/* mobile, 320-480px */
+html {
+  font-size: 14px;
+}
+
+/* tablets, 481-768px */
+@media screen and (min-width: 481px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* small screens, laptops, 769-1024px */
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* desktops, large screens, 1025-1200px */
+@media screen and (min-width: 1025px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* extra large screens, TVs, 1201+px */
+@media screen and (min-width: 1201px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+/* Anchor Tags */
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+  transition: color 0.5s;
+}
+
+a:visited {
+  color: var(--link-color)
+}
+
+a:hover {
+  color: var(--link-color-hover)
+}
+
+/* Headers */
+
 h1 h2 h3 h4 h5 {
   margin: 3em 0em 3em 0em;
 }
 
 h1 {
   font-size: 4.38em;
+  line-height: 1.3em;
+  margin: 0.4em 0em;
 }
 
 h2 {
@@ -13,8 +68,8 @@ h2 {
 h3 {
   font-size: 1.74em;
   line-height: 1em;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
 }
 
 h4 {
@@ -22,10 +77,11 @@ h4 {
 }
 
 .subtitle {
-  font-size: 0.7em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-size: 1em;
   font-weight: lighter;
   color: var(--muted);
-  line-height: 1.5em;
   overflow-wrap: normal;
 }
 

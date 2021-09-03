@@ -16,7 +16,7 @@ class ResumeItem(models.Model):
   subtitle = models.CharField(max_length=64)
   startDate = models.DateField()
   endDate = models.DateField(null=True, blank=True)
-  summary = models.TextField(max_length=256, null=True, blank=True)
+  summary = models.TextField(max_length=512, null=True, blank=True)
   bulletPoints = models.TextField(max_length=512, null=True, blank=True)
   website = models.CharField(max_length=128, null=True, blank=True)
   

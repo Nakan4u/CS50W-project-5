@@ -3,24 +3,28 @@
   margin: .25em .0em;
   padding: .75em .0em;
   color: var(--font-secondary);
-
 }
 
 .card-header {
   font-weight: bold;
+  align-items: center;
 }
 
 .card-header button {
   float: right;
+  vertical-align: middle;
 }
 .card .subtitle {
   font-weight: bold;
 }
 
+.card p {
+  margin: 0.5em 0px;
+}
+
 .card .timestamp {
-  margin: 0px;
+  line-height: 1em;
   font-weight: lighter;
-  text-align: right;
 }
 
 .bulletpoint-list li {
@@ -30,12 +34,12 @@
 }
 
 .card-grid-container {
-  align-items: top;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  justify-content: top;
 }
 
-.card-grid-column button {
-  float: right;
+.card-grid-column-btn {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
 }

@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { API_HOST } from '../Constants';
-import Card from '../components/Card';
 
+import Card from '../components/Card';
 import BlogPost from '../components/BlogPost';
+
+import './styles/BlogStyles.css';
 
 function Blog() {
   let { path } = useRouteMatch();
@@ -32,14 +34,16 @@ function Blog() {
       <h1>Blog</h1>
         <Switch>
           <Route exact path={path}>
-            <button className={!category && "button-selected"}onClick={() => setCategory(null)}>All</button>
-            {categories ? categories.map((c, index) => {
-              return(
-                <button className={category === c.name && "button-selected"} key={index} onClick={ () => setCategory(c.name) }>
-                  {c.name}
-                </button>
-              )
-            }) : '...' }
+            <div className="catagory-selector">
+              <button className={!category ? "button-selected" : undefined }onClick={() => setCategory(null)}>ALL</button>
+              {categories ? categories.map((c, index) => {
+                return(
+                  <button className={category === c.name ? "button-selected" : undefined} key={index} onClick={ () => setCategory(c.name) }>
+                    {c.name.toUpperCase()}
+                  </button>
+                )
+              }) : '...' }
+            </div>
 
             {posts ? posts.map((post, index) => {
               let props = {
@@ -63,5 +67,3 @@ function Blog() {
 }
 
 export default Blog;
-
-// <Card key={index} title={post.title} time={post.published} link={`/blog/post/${post.slug}`}/>

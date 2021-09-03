@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page-layout-container {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  margin-top: 50px;
+}
+
+/* desktops, large screens, 1025-1200px */
+@media screen and (min-width: 1025px) {
+  .page-layout-container {
+    margin-top: 100px;
+  }
+}

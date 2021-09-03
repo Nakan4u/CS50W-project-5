@@ -7,13 +7,14 @@ function NavBar() {
 
   // Perhaps this array could be moved to its own file and passed as props?
   const routes = {
-    Blog: "/blog",
     Resume: "/resume",
+    Blog: "/blog",
     Contact: "/contact",
   }
 
   return (
     <nav className="nav">
+      <div className="navbar-whitespace"/>
       <div className="navLeftSide">
         <NavLink exact={true} to={"/"}>Calum Bell</NavLink>
       </div>
@@ -29,6 +30,7 @@ function NavBar() {
         </div>
         <button onClick={() => setExpandLinks(!expandLinks)}>Navigation</button>
       </div>
+      <div className="navbar-whitespace" />
     </nav>
   );
 }

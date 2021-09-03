@@ -10,18 +10,17 @@ function Card(props) {
     <li className="card">
       <div className="card-grid-container">
         <div className="card-grid-column">
-          <p className="card-header">
+          <h3 className="card-header">
             {props.titleLink
               ? <a href={props.titleLink}>{props.title}</a>
               : <>{props.title}</>
-            }
-            <div className="subtitle">{props.subtitle}</div>
-            
-          </p>
-          <span className="timestamp">{props.time}</span>
+            }            
+          </h3>
+          <p className="subtitle">{props.subtitle}</p>
+          <p className="timestamp">{props.time}</p>
         </div>
         {props.isAccordion &&
-          <div className="card-grid-column"> 
+          <div className="card-grid-column-btn"> 
             <button className={isExpanded ? "button-selected" : undefined}
               onClick={() => setIsExpanded(!isExpanded)}>
                 Expand

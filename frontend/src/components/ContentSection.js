@@ -11,15 +11,15 @@ function ContentSection(props) {
   return (
     <section className="content-section">
       <div className="header">
-        <h3 onClick={() => setIsExpanded(!isExpanded)}>{props.title.toUpperCase()}</h3>
+        <h2 onClick={() => setIsExpanded(!isExpanded)}>{props.title.toUpperCase()}</h2>
         <img src={arrow_icon}
           alt="expand section button"
           className={isExpanded ? "toggle-btn toggle-btn-down" : "toggle-btn toggle-btn-right"}
           onClick={() => setIsExpanded(!isExpanded)}
         />
       </div>
-      {isExpanded ?
-        <div className="body">
+      { isExpanded ?
+        <div className="content-section-body">
           {props.items.map((item, index) => {
             return (
               <Card key={index}
@@ -34,8 +34,7 @@ function ContentSection(props) {
             )
           })}
         </div>
-        :
-        <></>
+        : <></>
       }
     </section>
   );

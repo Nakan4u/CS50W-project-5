@@ -1,0 +1,9 @@
+.catagory-selector {
+  display: inline-block;
+  border-top: 7px solid var(--primary-color);
+}
+
+.catagory-selector button {
+  letter-spacing: 0.5em;
+  background-color: none;
+}

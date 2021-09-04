@@ -4,7 +4,7 @@
   align-content: center;
   background-color: var(--primary-color);
   display: grid;
-  grid-template-columns: 1fr 4fr 4fr 1fr;
+  grid-template-columns: 2fr 5fr 11fr 2fr;
   height: 2em;
   padding: 1em 0em;
   position: fixed;
@@ -32,14 +32,14 @@
 .navLeftSide {
   align-items: center;
   display: flex;
-  flex: 35%;
+  flex: 25%;
   justify-content: left;
 }
 
 .navRightSide {
   align-items: center;
   display: flex;
-  flex: 65%;
+  flex: 75%;
   justify-content: flex-end;
 }
 

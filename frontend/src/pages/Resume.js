@@ -13,14 +13,11 @@ function Resume() {
     fetch(`${API_HOST}/resume`)
     .then(res => res.json())
     .then(data => setResume(data))
-    .then(console.log(resume))
   }, []);
 
   return(
     <main>
-      <h1>
-        {resume.firstName} {resume.lastName}
-      </h1>
+      <h1>Resume</h1>
       <p>{resume.summary}</p>
       <div>
         { // for each heading present in JSON rspns, generate a content section

@@ -21,9 +21,6 @@ function Home() {
         <div className="grid-item">
           <img className="portrait" src={portrait} alt="a portrait of Calum"></img>
         </div>
-        <div className="grid-item">
-          
-        </div>
       </div>
     </main>
   );

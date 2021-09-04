@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'blog_api',
     'resume_api',
+    'projects_api',
 ]
 
 MIDDLEWARE = [

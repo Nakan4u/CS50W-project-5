@@ -1,0 +1,18 @@
+.split-card-grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-bottom: 1.5em;
+  padding-bottom: 0.5em;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.split-card-grid-container div {
+  display: inline-block;
+}
+
+.split-card-img {
+  width: 100%;
+}

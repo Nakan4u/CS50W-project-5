@@ -7,6 +7,7 @@ function NavBar() {
 
   // Perhaps this array could be moved to its own file and passed as props?
   const routes = {
+    Projects: "/projects",
     Resume: "/resume",
     Blog: "/blog",
     Contact: "/contact",

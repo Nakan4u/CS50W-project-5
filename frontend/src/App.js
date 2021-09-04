@@ -7,6 +7,7 @@ import './styles/layout.css';
 import NavBar from "./components/NavBar";
 
 import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -24,6 +25,7 @@ function App() {
           
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/projects" component={Projects} />
             <Route path="/resume" component={Resume} />
             <Route path="/blog" component={Blog} />
             <Route path="/contact" component={Contact} />

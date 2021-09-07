@@ -1,7 +1,7 @@
 :root {
   --primary-color: #2f14c9;
-  --primary-color-light: #452dcc;
-  --primary-color-pastel: #e8e4ff;
+  --primary-color-light: #6e5dd1;
+  --primary-color-pastel: #8878dd;
   --secondary-color: #eee8e2;
   --highlight-primary: #c00303;
   --highlight-primary-pastel: #f0b2b2;
@@ -18,13 +18,17 @@
   height: 100vh;
 }
 
+body {
+  background-color: var(--white);
+}
 
 button {
   background-color: var(--highlight-primary);
   border: none;
   color: var(--white);
   margin: .25em;
-  padding: .5em 1.5em;
+  padding: .5em 1em;
+  font-size: 0.8em;
   font-weight: bold;
   transition: background-color 0.3s;
 }

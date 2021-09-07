@@ -2,7 +2,6 @@ import React from 'react';
 import './styles/SplitCardStyles.css';
 
 function SplitCard(props) {
-  console.log(props.num)
   return(
     <section className={ props.reverse 
                           ? "split-card-grid-container rtl"
@@ -15,7 +14,7 @@ function SplitCard(props) {
           <a href={props.website}>{props.website_slug}</a>
         </div>
         <div>
-          <img className="split-card-img" src={props.image_url}></img>
+          <img className="split-card-img" src={props.image_url} alt={"image representing " + props.title}></img>
         </div>
     </section>
   )

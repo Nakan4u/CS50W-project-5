@@ -19,16 +19,15 @@ function LinkIcons(props) {
     <ul className="icon-list-component">
       {
         Object.keys(props.websites).map((website, index) => {
-          if (icons[website]) {
-            return(
-              <a href={props.websites[website]} target="_blank" rel="noreferrer">
-                <li>
-                  <img src={icons[website]} alt={website}></img>
-                  <span className="xl-only">{website}</span>
-                </li>
-              </a>
-            )
-          }
+          if (!icons[website]) return null;
+          return(
+            <a href={props.websites[website]} target="_blank" rel="noreferrer" key={index}>
+              <li>
+                <img src={icons[website]} alt={website + " logo"}></img>
+                <span className="xl-only">{website}</span>
+              </li>
+            </a>
+          )
         })
       }
     </ul>

@@ -11,7 +11,7 @@ function BlogPost() {
     fetch(`${API_HOST}/blog/post/${slug}`)
       .then((response) => response.json())
       .then((data) => setPost(data))
-  }, []);
+  }, [slug]);
 
   return (
     <article>

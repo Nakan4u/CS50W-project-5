@@ -1,12 +1,12 @@
 .icon-list-component {
-  padding: 0em;
+  padding: .15em;
   margin: 0em 0em;
   list-style: none;
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: space-between;
-  border-top: 8px solid var(--primary-color);
+  justify-content: space-around;
+  border-bottom: 0.35em solid var(--primary-color);
 }
 
 .icon-list-component li {
@@ -14,7 +14,7 @@
 }
 
 .icon-list-component li img {
-  width: 52px;
+  width: 2.5em;
   padding: 0.5em 0em;
   
 }

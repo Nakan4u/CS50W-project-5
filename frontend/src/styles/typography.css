@@ -1,8 +1,31 @@
+/* Fonts */
+
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
 /* Responsive text resizing */
 
-/* mobile, 320-480px */
+/* small mobile, 320-380px */
 html {
-  font-size: 14px;
+  font-size: 12px;
+}
+
+/* mobile, 380-480px */
+@media screen and (min-width: 481px) {
+  html {
+    font-size: 14px;
+  }
 }
 
 /* tablets, 481-768px */
@@ -29,7 +52,7 @@ html {
 /* extra large screens, TVs, 1201+px */
 @media screen and (min-width: 1201px) {
   html {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -52,31 +75,25 @@ a:hover {
 /* Headers */
 
 h1 h2 h3 h4 h5 {
-  margin: 3em 0em 3em 0em;
+  margin: 1em 0em 3em 0em;
 }
 
 h1 {
-  font-size: 4.38em;
+  font-size: 4em;
   line-height: 1.3em;
-  margin: 0.4em 0em;
+  margin: 0.3em 0em;
 }
-/*
-h2 {
-  font-size: 2.84em;
-  margin: 0.25em 0em;
-}*/
 
 h2 {
-  display: inline;
-  letter-spacing: 0.5em;
-  font-size: 1.25em;
-  text-decoration: overline;
-  text-decoration-color: var(--primary-color); 
-  text-decoration-thickness: 0.25em;
+  display: inline-block;
+  letter-spacing: 0.4em;
+  margin-bottom: 0.25em;
+  font-size: 1.5em;
+  border-top: 0.2em solid var(--primary-color);
 }
 
 h3 {
-  font-size: 1.74em;
+  font-size: 1.25em;
   line-height: 1em;
   margin-top: 0.25em;
   margin-bottom: 0.25em;
@@ -90,18 +107,19 @@ h4 {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
   font-size: 1em;
-  font-weight: lighter;
+  font-weight: normal;
   color: var(--muted);
   overflow-wrap: normal;
 }
 
 
 p {
+  font-size: 1em;
   line-height: 1.3em;
 }
 
 
 .large-text {
-  font-size: 1.7em;
+  font-size: 1.5em;
   line-height: 1.5em;
 }

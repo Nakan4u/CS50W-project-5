@@ -1,6 +1,6 @@
 .catagory-selector {
   display: inline-block;
-  border-top: 7px solid var(--primary-color);
+  border-top: 0.35em solid var(--primary-color);
 }
 
 .catagory-selector button {

@@ -8,6 +8,78 @@ The most distinctive features of my final project, compared to the previous four
 
 Creating a project with this structure was considerably more complex than previous assignments; CORS needed to be set up, multiple APIs needed to be built to serve all the required data, and more JavaScript was needed to create interestings and reactive UI elements. The CSS is much more complicated than in previous efforts, with a greater number of media queries being used to create a responsive design that looks good on many different screen sizes.
 
+
+## Running the App
+
+First, clone the repository:
+```
+git clone https://github.com/calumbell/cs50w-personal-spa
+cd cs50w-personal-spa
+```
+
+### Setting up the Backend
+
+Navigate to the backend directory:
+```
+cd backend
+```
+
+Create a Python virtual environment to install dependancies:
+```
+python3 -m venv venv
+```
+
+On Unix or Mac, run:
+```
+source venv/bin/activate
+```
+
+To activate the virtual environment on Windows, run:
+```
+venv\Scripts\activate.bat
+```
+
+
+Install dependencies:
+```
+pip3 install -r requirements.txt
+```
+
+Django requires a secret key, make you add one to your bash profile:
+```
+SECRET_KEY="your-secret-key-goes-here"
+export SECRET_KEY 
+```
+
+You can generate a random secret key by running:
+```
+python3 -c "import secrets; print(secrets.token_urlsafe())"
+```
+
+To run the development server:
+```
+python3 manage.py runserver
+```
+
+### Setting up the Frontend
+
+Navigate to the Frontend directory:
+```
+cd ../frontend
+```
+
+Install dependencies: 
+
+```
+npm install
+```
+
+Run the development server:
+```
+yarn start
+```
+
+
 ## Files
 
 ```
@@ -94,74 +166,4 @@ cs50w-personal-spa
 │   │   │
 │   │ 
 │
-```
-
-## Running the App
-
-First, clone the repository:
-```
-git clone https://github.com/calumbell/cs50w-personal-spa
-cd cs50w-personal-spa
-```
-
-### Setting up the Backend
-
-Navigate to the backend directory:
-```
-cd backend
-```
-
-Create a Python virtual environment to install dependancies:
-```
-python3 -m venv venv
-```
-
-On Unix or Mac, run:
-```
-source venv/bin/activate
-```
-
-To activate the virtual environment on Windows, run:
-```
-venv\Scripts\activate.bat
-```
-
-
-Install dependencies:
-```
-pip3 install -r requirements.txt
-```
-
-Django requires a secret key, make you add one to your bash profile:
-```
-SECRET_KEY="your-secret-key-goes-here"
-export SECRET_KEY 
-```
-
-You can generate a random secret key by running:
-```
-python3 -c "import secrets; print(secrets.token_urlsafe())"
-```
-
-To run the development server:
-```
-python3 manage.py runserver
-```
-
-### Setting up the Frontend
-
-Navigate to the Frontend directory:
-```
-cd ../frontend
-```
-
-Install dependencies: 
-
-```
-npm install
-```
-
-Run the development server:
-```
-yarn start
 ```

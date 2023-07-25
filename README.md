@@ -4,6 +4,7 @@ A single-page personal website application built using React and Django. Capston
 
 
 ## Distinctiveness and Complexity
+
 The most distinctive features of my final project, compared to the previous four assignments, is the use of React as a frontend framework. Instead of having Django serving HTML, here it is configured to operate purely as an API (using the Django REST Framework), as would be expected in a single-page application.
 
 Creating a project with this structure was considerably more complex than previous assignments; CORS needed to be set up, multiple APIs needed to be built to serve all the required data, and more JavaScript was needed to create interestings and reactive UI elements. The CSS is much more complicated than in previous efforts, with a greater number of media queries being used to create a responsive design that looks good on many different screen sizes.
